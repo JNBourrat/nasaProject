@@ -1,0 +1,14 @@
+<div *ngIf="obj">
+  <div class="container-fluid m-3">
+    <h2>{{ obj?.title }}</h2>
+    <div class="row m-2">
+      <div class="col-12"><img class="img-fluid" src="{{ obj?.url }}" alt="{{ obj?.title }}"></div>
+    </div>
+    <div class="row m-2">
+      <div class="col-12 d-flex justify-content-start">Copyright: {{ obj?.copyright }} ({{ obj.date | date:'shortDate'}})</div>
+    </div>
+    <div class="row m-2">
+      <div class="col-12">Description: {{ obj?.explanation }}</div>
+    </div>
+  </div>
+</div>
