@@ -18,9 +18,7 @@ export class AppComponent implements OnInit {
   obj: Object;
 
   ngOnInit() {
-    // this.obj = this.service.getApod();
-    this.http.get('https://api.nasa.gov/planetary/apod?api_key=9YvbMNa9ebx2aKdXXIMI0FG6PHtfMewHVHKraU0C')
-      .subscribe(data => {
+    this.service.getApod().subscribe(data => {
         this.obj = data;
       });
   }
