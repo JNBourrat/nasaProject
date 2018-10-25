@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GetApodService } from './get-apod.service';
 import {HttpClient} from '@angular/common/http';
+import { CustomApod } from './customApod';
 
 @Component({
   selector: 'app-root',
@@ -15,11 +16,12 @@ export class AppComponent implements OnInit {
     private http: HttpClient
   ) {}
 
-  obj: Object;
+  obj: CustomApod;
 
   ngOnInit() {
     this.service.getApod().subscribe(data => {
-        this.obj = data;
+        this.obj = new CustomApod(data.copyright, data.date, data.explanation, data.title, data.url);
+        console.log(this.obj);
       });
   }
 }

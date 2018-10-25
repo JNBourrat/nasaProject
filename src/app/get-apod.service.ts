@@ -12,7 +12,7 @@ export class GetApodService {
 
 
   getApod() {
-    return this.http.get('https://api.nasa.gov/planetary/apod?api_key=9YvbMNa9ebx2aKdXXIMI0FG6PHtfMewHVHKraU0C');
+    return this.http.get<any>('https://api.nasa.gov/planetary/apod?api_key=9YvbMNa9ebx2aKdXXIMI0FG6PHtfMewHVHKraU0C');
   }
 
 }
